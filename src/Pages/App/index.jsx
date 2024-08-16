@@ -6,18 +6,20 @@ import { MyOrders } from "../MyOrders";
 import { MyOrder } from "../MyOrder";
 import { SignIn } from "../SignIn";
 import { NotFound } from "../NotFound";
+//Components
+import { NavBar } from "../../components/Navbar"; 
 
 
 import "./App.css";
 
 const AppRoutes = () => {
     let routes = useRoutes([
-        {path: './', element: <Home/>},
-        {path: '/myaccount', element: <MyAccount/>},
-        {path: '/myorders', element: <MyOrders/>},
-        {path: '/myorder', element: <MyOrder/>},
-        {path: '/signin', element: <SignIn/>},
-        {path: '/*', element: <NotFound/>},
+      {path: '/', element: <Home/>},
+      {path: '/*', element: <NotFound/>},
+      {path: '/my-account', element: <MyAccount/>},
+      {path: '/my-orders', element: <MyOrders/>},
+      {path: '/my-order', element: <MyOrder/>},
+      {path: '/sign-in', element: <SignIn/>},
     ])
     return routes
 }
@@ -28,6 +30,7 @@ export const App = () => {
   return (
     <BrowserRouter>
         <AppRoutes />
+        <NavBar />
     </BrowserRouter>
   );
 };
