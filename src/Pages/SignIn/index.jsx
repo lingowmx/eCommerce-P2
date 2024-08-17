@@ -1,7 +1,6 @@
-import React from 'react'
+import React from "react";
 
-export const SignIn= () => {
-  return (
-    <div>signin</div>
-  )
-}
+import { Layout } from "../../components/Layout";
+export const SignIn = () => {
+  return <Layout>SIGN IN</Layout>;
+};

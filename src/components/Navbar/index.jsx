@@ -11,12 +11,14 @@ export const NavBar = () => {
   //STATES
   const [isMenuVisible, setIsMenuVisible] = useState(false);
 
+  const activeStyle = "underline underline-offset-4";
+
   const toggleMenu = () => {
     setIsMenuVisible(!isMenuVisible);
   };
 
   return (
-    <nav className="">
+    <nav className="md:w-full md:fixed md:top-0 md:z-10 md:border-2 border-black">
       <div
         id="mobile-menu"
         className="bg-gray-100 w-full h-14 fixed bottom-0 md:hidden"
@@ -46,12 +48,19 @@ export const NavBar = () => {
       <div
         className={`${
           isMenuVisible ? "block" : "hidden"
-        } mx-4 md:w-full md:flex md:justify-between md:mx-0 px-1`}
+        } mx-4 md:w-full md:flex md:justify-between md:mx-0 md:px-1`}
       >
         <ul className="border-b-2 py-4 md:flex md:w-80 md:border-b-0">
           <div className="shopi md:mr-2">
             <li className="font-extrabold hidden md:block">
-              <NavLink to="/">Shopi</NavLink>
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  isActive ? activeStyle : undefined
+                }
+              >
+                Shopi
+              </NavLink>
             </li>
           </div>
           <div
@@ -59,35 +68,90 @@ export const NavBar = () => {
             className="md:flex md:justify-between md:w-72"
           >
             <li>
-              <NavLink to="/all">All</NavLink>
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  isActive ? activeStyle : undefined
+                }
+              >
+                All
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/clothes">Clothes</NavLink>
+              <NavLink
+                to="/clothes"
+                className={({ isActive }) =>
+                  isActive ? activeStyle : undefined
+                }
+              >
+                Clothes
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/electronics">Electronics</NavLink>
+              <NavLink
+                to="/electronics"
+                className={({ isActive }) =>
+                  isActive ? activeStyle : undefined
+                }
+              >
+                Electronics
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/toys">Toys</NavLink>
+              <NavLink
+                to="/toys"
+                className={({ isActive }) =>
+                  isActive ? activeStyle : undefined
+                }
+              >
+                Toys
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/others">Others</NavLink>
+              <NavLink
+                to="/others"
+                className={({ isActive }) =>
+                  isActive ? activeStyle : undefined
+                }
+              >
+                Others
+              </NavLink>
             </li>
           </div>
         </ul>
         <ul className="py-4 md:flex md:justify-between w-80">
           <li className="hidden">zapateria123@zapatos.com</li>
           <li>
-            <NavLink to="/all">My Account</NavLink>
+            <NavLink
+              to="/my-account"
+              className={({ isActive }) => (isActive ? activeStyle : undefined)}
+            >
+              My Account
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/my-account">My Orders</NavLink>
+            <NavLink
+              to="/my-orders"
+              className={({ isActive }) => (isActive ? activeStyle : undefined)}
+            >
+              My Orders
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/my-orders">My Order</NavLink>
+            <NavLink
+              to="/my-order"
+              className={({ isActive }) => (isActive ? activeStyle : undefined)}
+            >
+              My Order
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/my-order">Sign In</NavLink>
+            <NavLink
+              to="/sign-in"
+              className={({ isActive }) => (isActive ? activeStyle : undefined)}
+            >
+              Sign In{" "}
+            </NavLink>
           </li>
           <span className="items-center text-center flex">
             <IoCartOutline />
